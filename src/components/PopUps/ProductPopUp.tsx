@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Product } from '../../Data/products';
 
 interface ProductPopupProps {
@@ -15,12 +16,18 @@ export default function ProductPopup({ product, onClose }: ProductPopupProps) {
     setTimeout(() => {
       setSelectedImage(image); // Set the clicked image as the main image
       setIsLoading(false); // Stop loading animation after a delay
-    }, 800); // Simulate a loading delay (800ms)
+    }, 300); // Simulate a loading delay (800ms)
   };
 
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white rounded-lg p-6 w-full max-w-4xl flex relative">
+      <motion.div
+      initial={{ opacity: 0, y: 200 }}  // Start from below the screen
+      animate={{ opacity: 1, y: 0 }}    // Animate to center
+      exit={{ opacity: 0, y: 200 }}     // Exit back downwards
+      transition={{ type: 'spring', stiffness: 100, damping: 20, duration: 0.5 }}  // Smooth spring animation
+      className="bg-white rounded-lg p-6 w-full max-w-4xl flex relative" >
+
         {/* Close Button */}
         <span
           className="absolute top-1 right-4 text-gray-500 text-2xl cursor-pointer"
@@ -80,7 +87,7 @@ export default function ProductPopup({ product, onClose }: ProductPopupProps) {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

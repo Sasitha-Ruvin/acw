@@ -18,6 +18,7 @@ import skintoner from '../Images/ProductImages/skintoner.jpeg'
 import waralasa from '../Images/ProductImages/waralasa.jpeg'
 import facialcleanser from '../Images/ProductImages/facialcleanser.jpeg'
 import bodymoisture from '../Images/ProductImages/everbodymoisture.jpeg'
+
 import tumeric2 from '../Images/ProductImages/tumeric2.webp'
 import tumeric3 from '../Images/ProductImages/tumeric3.webp'
 import antiblemish2 from '../Images/ProductImages/pigmentcontrol2.webp'
@@ -25,6 +26,22 @@ import antiblemish3 from '../Images/ProductImages/blemish3.webp';
 import daycream2 from '../Images/ProductImages/brightningdaycream.webp';
 import nightcream2 from '../Images/ProductImages/nightcream2.webp';
 import mint2 from '../Images/ProductImages/mint2.webp'
+import facewash2 from '../Images/ProductImages/facewash2.webp'
+import skintoner2 from '../Images/ProductImages/skintoner2.webp'
+import nightLotion2 from '../Images/ProductImages/nightlotion2.webp'
+import roseT2 from '../Images/ProductImages/roseT2.webp'
+import roseT3 from '../Images/ProductImages/roseT3.webp'
+import charcoal2 from '../Images/ProductImages/charcoal2.jpg'
+import charcoal3 from '../Images/ProductImages/charcoal3.webp'
+import coffee2 from '../Images/ProductImages/coffee2.webp'
+import coffee3 from '../Images/ProductImages/coffee3.webp'
+import sandalwood2 from '../Images/ProductImages/sandalwood2.webp'
+import daylotion2 from '../Images/ProductImages/daylotion2.webp'
+import daylotion3 from '../Images/ProductImages/daylotion3.webp'
+import suncream2 from '../Images/ProductImages/suncream2.webp'
+import spotcorrecting2 from '../Images/ProductImages/spotcorrecting2.webp'
+import bodymoisture2 from '../Images/ProductImages/moisturizer.webp'
+
 
 export interface Product{
     id:number;
@@ -42,7 +59,7 @@ export const products:Product[]=[
         desc:"Enriched with the essence of rose tea and the soothing properties of aloe vera, this luxurious formula provides hydration and nourishment to your skin, leaving it feeling smooth and rejuvenated",
         price:690,
         image:roseT,
-        additionalImgaes:[roseT,roseT,roseT]
+        additionalImgaes:[roseT2,roseT3]
     },
     {
         id:2,
@@ -74,7 +91,7 @@ export const products:Product[]=[
         desc:"During the day, indulge in our Radiant & Protective Brightening Daytime Body Lotion. Lightweight and fast absorbing, this soft and smooth lotion is enriched with vitamin E and castor oil to nourish and protect your skin throughout the day",
         price:3150,
         image:dayLotion,
-        additionalImgaes:[dayLotion,dayLotion]
+        additionalImgaes:[daylotion2,daylotion3]
     },
     {
         id:6,
@@ -82,7 +99,7 @@ export const products:Product[]=[
         desc:"A luxurious blend infused with bee honey and vitamin A to deeply nourish and revitalize your skin while you sleep. This advanced formula goes beyond moisturization, working to even out skin tone and promote a radiant complexion.",
         price:3300,
         image:nightLotion,
-        additionalImgaes:[nightLotion,nightLotion]
+        additionalImgaes:[nightLotion2]
     },
     {
         id:7,
@@ -90,7 +107,8 @@ export const products:Product[]=[
         desc:"Infused with 24-carat gold dust, this luxurious formula gently removes dead skin and dark spots, leaving skin fresh and vibrant. Restore your natural complexion, even out skin tone, and eliminate dullness with every wash.",
         price:600,
         image:facewash,
-        additionalImgaes:[facewash,facewash]
+        additionalImgaes:[facewash2]
+
     },
     {
         id:8,
@@ -106,7 +124,7 @@ export const products:Product[]=[
         desc:"Infused with special ingredients like hyaluronic acid, walnut shell powder, coffee powder, green tea extract, and glycolic acid. Experience a revitalizing exfoliation with natural, skinloving ingredients.",
         price:1699,
         image:coffee,
-        additionalImgaes:[coffee,coffee]
+        additionalImgaes:[coffee2,coffee3]
     },
     {
         id:10,
@@ -114,7 +132,7 @@ export const products:Product[]=[
         desc:"Formulated with hyaluronic acid, glycolic acid, and vitamin E to nourish and rejuvenate. Achieve a brighter complexion and revitalized skin with the purifying power of activated charcoal.",
         price:1600,
         image:charcoal,
-        additionalImgaes:[charcoal,charcoal]
+        additionalImgaes:[charcoal2,charcoal3]
     },
     {
         id:11,
@@ -122,7 +140,7 @@ export const products:Product[]=[
         desc:"Our skin cleanser is a deep cleanse that purifies your skin, removing impurities, excess oil, and makeup residue without stripping away essential moisture. Formulated with gentle yet effective ingredients, it leaves your skin feeling refreshed, balanced, and ready to absorb the benefits of your skincare routine.",
         price:690,
         image:facialcleanser,
-        additionalImgaes:[facialcleanser,facialcleanser]
+        additionalImgaes:[]
     },
     {
         id:12,
@@ -130,7 +148,7 @@ export const products:Product[]=[
         desc:"This SPF 50 sunscreen provides superior sun control while keeping your skin moisturized throughout the day. Protecting against harmful UV rays, it not only prevents sunburn but also shields your skin from premature aging. Our shielding sun cream is your trusted companion for radiant and healthy skin under the sun.",
         price:1100,
         image:suncream,
-        additionalImgaes:[suncream,suncream]
+        additionalImgaes:[suncream2]
     },
     {
         id:13,
@@ -146,7 +164,7 @@ export const products:Product[]=[
         desc:"Crafted with a harmonious blend of natural extracts to nourish and revitalize your hair. Enriched with virgin coconut oil, Bhringraj extract, Shikakai extract, and soothing Aloe extract, this formula gently cleanses while providing deep hydration and strengthening benefits. Experience the luxurious lather and invigorating scent as it leaves your hair feeling soft, silky, and refreshed after each wash.",
         price:740,
         image:shampoo,
-        additionalImgaes:[shampoo,shampoo]
+        additionalImgaes:[]
     },
     {
         id:15,
@@ -154,7 +172,7 @@ export const products:Product[]=[
         desc:"ntroducing our luxurious conditioner, infused with a nourishing blend of premium ingredients to pamper your hair. Enriched with B165, Xiameter 1785, hydrolyzed silk protein, and virgin coconut oil, this formula provides intense hydration and strengthens each strand from within. Experience the silky-smooth texture and the irresistible shine as it detangles and softens your hair, leaving it looking and feeling healthier than ever before.",
         price:740,
         image:conditioner,
-        additionalImgaes:[conditioner,conditioner]
+        additionalImgaes:[]
     },
     {
         id:16,
@@ -162,7 +180,7 @@ export const products:Product[]=[
         desc:"Enriched with the essence of seven powerful herbs including hringraj, Amla, and Neem, this exquisite formula penetrates deep into the roots, nourishing and strengthening each strand from withinBid farewell to dryness, breakage, and dullness as this lightweight elixir replenishes moisture, promotes healthy growth, and adds a radiant shine to your locks.",
         price:690,
         image:waralasa,
-        additionalImgaes:[waralasa,waralasa]
+        additionalImgaes:[]
     },
     {
         id:17,
@@ -170,7 +188,7 @@ export const products:Product[]=[
         desc:"Enriched with the timeless essence of sandalwood, this indulgent formula provides essential hydration and protection during the day, while working overnight to repair and replenish, leaving your skin soft, supple, and radiant.",
         price:690,
         image:sandalwood,
-        additionalImgaes:[sandalwood,sandalwood]
+        additionalImgaes:[]
     },
     {
         id:18,
@@ -178,7 +196,7 @@ export const products:Product[]=[
         desc:"Formulated with potent ingredients like encapsulated sulfur and salicylic acid, this cream targets acne at its source, effectively reducing blemishes and preventing future breakouts. It's time to sabotage the breakout cycle and reveal your best skin yet.",
         price:1100,
         image:spotcorrecting,
-        additionalImgaes:[spotcorrecting,spotcorrecting]
+        additionalImgaes:[spotcorrecting2]
     },
     {
         id:19,
@@ -186,7 +204,7 @@ export const products:Product[]=[
         desc:"",
         price:1200,
         image:bodymoisture,
-        additionalImgaes:[bodymoisture,bodymoisture]
+        additionalImgaes:[bodymoisture2]
     },
     {
         id:20,
@@ -194,6 +212,6 @@ export const products:Product[]=[
         desc:"Our toner is the essential second step in your skincare regimen, designed to rebalance your skin's pH levels, tighten pores, and refine texture. Enriched with skin-loving botanical extracts and hydrating agents, it preps your skin to receive the full benefits of your serums and moisturizers while providing a refreshing boost of hydration.",
         price:490,
         image:skintoner,
-        additionalImgaes:[skintoner,skintoner]
+        additionalImgaes:[skintoner2]
     }
 ]
