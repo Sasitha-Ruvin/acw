@@ -5,6 +5,7 @@ import AboutHero from '../components/Banner/AboutHero'
 import Navbar from '../components/Navbar/Navbar'
 import AboutSection from '../components/Sections/AboutSection'
 import OwnerHero from '../components/AboutUs/OwnerHero'
+import Certification from '../components/Sections/Certification'
 
 export default function About() {
   return (
@@ -13,6 +14,7 @@ export default function About() {
         <AboutHero/>
         <AboutSection/>
         <OwnerHero/>
+        <Certification/>
         <Footer/>
     </div>
   )

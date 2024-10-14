@@ -1,36 +1,33 @@
-import slider1 from '../Images/slider1.jpeg'
+import slider1 from '../Images/Sliders/slider1.jpeg'
+import slider2 from '../Images/Sliders/slider2.jpeg'
+import slider3 from '../Images/Sliders/slider3.jpeg'
+import slider4 from '../Images/Sliders/slider4.jpeg'
 
 const sliderData = [
     {
       id: 1,
       image: slider1, 
-      title: "ACTIVATED CHARCOAL FACE PACK"
+      title: "Daily Fairness Kit",
+      price: 13390
     },
     {
       id: 2,
-      image: slider1, 
-      title: "GOLDEN RADIANCE FACE WASH"
+      image: slider2, 
+      title: "Fairness Facial Kit",
+      price: 11290
     },
     {
       id: 3,
-      image: slider1,
-      title: "COFFEE AND WALNUT FACIAL SCRUB"
+      image: slider3,
+      title: "Daily Skin Routine",
+      price:11320
     },
     {
       id: 4,
-      image: slider1,
-      title: "BRIGHTENING NIGHT CREAM AND DAY CREAM"
+      image: slider4,
+      title: "Pimple And Hair Care Kit",
+      price:10290
     },
-    {
-      id: 5,
-      image: slider1,
-      title: "DEEP CLEANSER AND SKIN TONER"
-    },
-    {
-      id: 6,
-      image: slider1,
-      title: "SHIELDING SUN CREAM"
-    }
   ];
   
   export default sliderData;
