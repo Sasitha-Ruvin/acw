@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import banner from '../../Images/Banners/about.jpeg';
+import banner from '../../Images/Banners/aboutbanner.jpeg';
 import './Hero.css';
 
 export default function AboutHero() {

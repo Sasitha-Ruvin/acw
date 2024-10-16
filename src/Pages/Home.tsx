@@ -6,7 +6,7 @@ import HomeHero from '../components/Sections/HomeHero'
 import FeaturedSection from '../components/Sections/FeaturedSection'
 import IntroSection from '../components/Sections/IntroSection'
 import HomeSlider from '../components/Sliders/HomeSlider'
-import Certification from '../components/Sections/Certification'
+import Certification from '../components/AboutUs/Certification'
 import Footer from '../components/Footer/Footer'
 
 export default function Home() {

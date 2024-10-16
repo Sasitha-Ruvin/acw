@@ -4,19 +4,17 @@ import owner from '../../Images/owners.webp'
 export default function OwnerHero() {
   return (
     <section className="bg-gray-100 py-16 flex justify-center">
-      <div className="container mx-auto flex flex-col md:flex-row items-center md:items-start max-w-5xl p-8 rounded-lg shadow-lg bg-gray-100">
+      <div className="container mx-auto flex flex-col md:flex-row items-center md:items-start max-w-6xl p-8 rounded-lg shadow-lg bg-gray-100">
         <div className="relative md:w-1/3 w-full flex justify-center md:justify-start mb-6 md:mb-0">
-          {/* This is the white box behind the image */}
           <div className="absolute inset-0 bg-white -left-3 -top-4 h-full w-full z-0 rounded "></div>
-          {/* Image with z-index to be on top of the white box */}
           <img
             src={owner}
             alt="Founders"
-            className="relative z-10 rounded-md object-cover h-96 w-80 left-3"
+            className="relative z-10 rounded-md object-cover h-96 w-80 left-3 top-3"
           />
         </div>
 
-        <div className="md:w-2/3 w-full md:pl-8 text-center md:text-left">
+        <div className="md:w-2/3 w-full md:pl-8 text-center md:text-left left-2">
           <h3 className="text-2xl font-medium uppercase text-gray-600 mb-4">
             What do our{" "}
             <span className="italic font-light text-gray-800 text-3xl">creators</span> say?

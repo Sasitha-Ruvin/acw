@@ -48,7 +48,7 @@ export default function Navbar() {
           </nav>
 
           {/* Shopping Cart Icon for Desktop */}
-          <FaShoppingCart className='text-gray-700 text-2xl hidden md:block mr-4' onClick={()=>handleNavigation('/cart')} />
+          <FaShoppingCart className='text-gray-700 cursor-pointer text-2xl hidden md:block mr-4' onClick={()=>handleNavigation('/cart')} />
         </div>
 
         {/* Mobile Nav Links */}
