@@ -11,10 +11,10 @@ import image4 from '../../Images/AboutUs/skintype4.jpg';
 export default function Explore() {
   const navigate = useNavigate();
   const ref = useRef(null);
-  const inViewRef = useRef(null); // Create a ref for the in-view check
-  const isInView = useInView(inViewRef, { once: true }); // Use useInView correctly
+  const inViewRef = useRef(null);
+  const isInView = useInView(inViewRef, { once: true });
 
-  const handleNavigation = (path: string) => {
+  const handleNavigation = (path:string) => {
     navigate(path);
   };
 
@@ -23,6 +23,14 @@ export default function Explore() {
     { color: '#c0896e', id: 'tone2' },
     { color: '#ab6b4c', id: 'tone3' },
     { color: '#8f4b2e', id: 'tone4' },
+  ];
+
+  // Image data for easy mapping
+  const images = [
+    { src: image1, alt: "Image 1" },
+    { src: image2, alt: "Image 2" },
+    { src: image3, alt: "Image 3" },
+    { src: image4, alt: "Image 4" },
   ];
 
   return (
@@ -53,14 +61,33 @@ export default function Explore() {
           ))}
         </div>
 
+        {/* Images with staggered animation */}
         <div className='mt-8 grid grid-cols-2 md:grid-cols-3 gap-4'>
           <div className='col-span-2 grid grid-cols-1 gap-4'>
-            <img src={image1} alt="Image 1" className="rounded-md object-cover h-64 w-full" />
-            <img src={image2} alt="Image 2" className="rounded-md object-cover h-64 w-full" />
+            {images.slice(0, 2).map((image, index) => (
+              <motion.img
+                key={image.alt}
+                src={image.src}
+                alt={image.alt}
+                className="rounded-md object-cover h-64 w-full"
+                initial={{ opacity: 0, y: 20 }} // Initial state
+                animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate on scroll into view
+                transition={{ duration: 0.5, delay: index * 0.3 }} // Staggered delay
+              />
+            ))}
           </div>
           <div className='grid grid-rows-2 gap-4'>
-            <img src={image3} alt="Image 3" className="rounded-md object-cover h-64 w-full" />
-            <img src={image4} alt="Image 4" className="rounded-md object-cover h-64 w-full" />
+            {images.slice(2, 4).map((image, index) => (
+              <motion.img
+                key={image.alt}
+                src={image.src}
+                alt={image.alt}
+                className="rounded-md object-cover h-64 w-full"
+                initial={{ opacity: 0, y: 20 }} // Initial state
+                animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate on scroll into view
+                transition={{ duration: 0.5, delay: (index + 2) * 0.3 }} // Staggered delay
+              />
+            ))}
           </div>
         </div>
 
@@ -78,10 +105,10 @@ export default function Explore() {
           <span className="mr-2 text-2xl">Talk to us at...</span>
           <div className="flex space-x-4 text-gray-800">
             <a href="https://www.instagram.com/advanced_classic_white?igsh=Y2d1OXA0NDB3aDZk" target="_blank" aria-label="Instagram">
-                <FaInstagram className="w-10 h-10 cursor-pointer"/>
+              <FaInstagram className="w-10 h-10 cursor-pointer" />
             </a>
             <a href="https://www.facebook.com/profile.php?id=61557950182110" target="_blank" aria-label="Facebook">
-                <FaFacebook className="w-10 h-10 cursor-pointer"/>
+              <FaFacebook className="w-10 h-10 cursor-pointer" />
             </a>
           </div>
         </div>
