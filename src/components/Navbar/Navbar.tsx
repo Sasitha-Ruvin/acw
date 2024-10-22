@@ -43,10 +43,10 @@ export default function Navbar() {
           {/* Nav Links for Desktop */}
           <nav className="hidden md:flex flex-1 mx-8">
             <ul className="flex justify-center w-full space-x-32">
-              <li><a href="#home" className={`nav-link text-xl ${isActive('/') ? 'active' : ''}`} onClick={()=>handleNavigation('/')}>Home</a></li>
-              <li><a href="#store" className={`nav-link text-xl ${isActive('/products') ? 'active' : ''}`} onClick={()=>handleNavigation('/products')}>Store</a></li>
-              <li><a href="#about" className={`nav-link text-xl ${isActive('/about') ? 'active' : ''}`} onClick={()=> handleNavigation('/about')}>About Us</a></li>
-              <li><a href="#contact" className={`nav-link text-xl ${isActive('/contact') ? 'active' : ''}`} onClick={()=> handleNavigation('/contact')}>Contact Us</a></li>
+              <li><a href="" className={`nav-link text-xl ${isActive('/') ? 'active' : ''}`} onClick={()=>handleNavigation('/')}>Home</a></li>
+              <li><a href="" className={`nav-link text-xl ${isActive('/products') ? 'active' : ''}`} onClick={()=>handleNavigation('/products')}>Store</a></li>
+              <li><a href="" className={`nav-link text-xl ${isActive('/about') ? 'active' : ''}`} onClick={()=> handleNavigation('/about')}>About Us</a></li>
+              <li><a href="" className={`nav-link text-xl ${isActive('/contact') ? 'active' : ''}`} onClick={()=> handleNavigation('/contact')}>Contact Us</a></li>
             </ul>
           </nav>
 
@@ -65,10 +65,10 @@ export default function Navbar() {
         <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} absolute top-20 left-0 w-full bg-gray-100 shadow-md z-50`}>
           <nav>
             <ul className="flex flex-col items-center py-8 space-y-4">
-              <li><a href="#home" className="text-gray-700" onClick={()=>handleNavigation('/')}>Home</a></li>
-              <li><a href="#store" className="text-gray-700" onClick={()=>handleNavigation('/products')}>Store</a></li>
-              <li><a href="#about" className="text-gray-700" onClick={()=> handleNavigation('/about')}>About Us</a></li>
-              <li><a href="#contact" className="text-gray-700" onClick={()=> handleNavigation('/contact')}>Contact Us</a></li>
+              <li><a href="" className="text-gray-700" onClick={()=>handleNavigation('/')}>Home</a></li>
+              <li><a href="" className="text-gray-700" onClick={()=>handleNavigation('/products')}>Store</a></li>
+              <li><a href="" className="text-gray-700" onClick={()=> handleNavigation('/about')}>About Us</a></li>
+              <li><a href="" className="text-gray-700" onClick={()=> handleNavigation('/contact')}>Contact Us</a></li>
               {/* Mobile Cart Icon */}
               <li><FaShoppingCart className='text-gray-700 text-2xl' onClick={() => handleNavigation('/cart')} /></li>
             </ul>
