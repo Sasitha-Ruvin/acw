@@ -10,6 +10,7 @@ import Contact from './Pages/Contact';
 import Facial from './Pages/Facial';
 import Cart from './Pages/Cart';
 import { CartProvider } from './context/CartContext';
+import { OrderSummary } from './components/Cart/OrderSummary';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/facial' element={<Facial/>}/>
           <Route path='/cart' element={<Cart/>}/>
+          <Route  path='/order' element={<OrderSummary/>}/>
         </Routes>
       </Router>
     </CartProvider>
