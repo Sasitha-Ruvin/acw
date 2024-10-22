@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Product } from '../../Data/products';
 import { useCart } from '../../context/CartContext';
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.css';
 
 
 interface ProductPopupProps {
@@ -38,6 +40,18 @@ export default function ProductPopup({ product, onClose }: ProductPopupProps) {
   const handleAddToCart = () =>{
     addToCart({...product, quantity});
     onClose();
+    Swal.fire({
+      position:'top',
+      icon:'success',
+      title:`${product.name} added to cart`,
+      showConfirmButton:false,
+      timer:2000,
+      toast:true,
+      background:'#0f0f0f0',
+      customClass:{
+        popup:'swal-popup-class'
+      }
+    })
   }
 
   return (

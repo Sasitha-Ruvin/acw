@@ -3,13 +3,16 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import logo from '../../Images/logo.png';
 import { FaShoppingCart, FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css'
+import { useCart } from '../../context/CartContext';
 
 export default function Navbar() {
   const [isOpen, setIsOpenNav] = useState(false);
   const navigate = useNavigate();
+  const {cart} = useCart();
   const location = useLocation(); 
   const isActive = (path: string) => location.pathname === path;
 
+  const hasItemsInCart = cart.length > 0;
   const handleNavigation = (path:string) =>{
     setIsOpenNav(false)
     navigate(path)
@@ -48,7 +51,14 @@ export default function Navbar() {
           </nav>
 
           {/* Shopping Cart Icon for Desktop */}
-          <FaShoppingCart className='text-gray-700 cursor-pointer text-2xl hidden md:block mr-4' onClick={()=>handleNavigation('/cart')} />
+          <div className="relative hidden md:block mr-4">
+            {/* Red dot if items exist in the cart */}
+            {hasItemsInCart && (
+              <span className="absolute -top-2 -right-2 bg-red-500 h-3 w-3 rounded-full"></span>
+            )}
+            <FaShoppingCart className='text-gray-700 cursor-pointer text-2xl' onClick={() => handleNavigation('/cart')} />
+          </div>
+            
         </div>
 
         {/* Mobile Nav Links */}

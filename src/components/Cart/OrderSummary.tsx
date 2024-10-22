@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import emailjs from 'emailjs-com'; // Import EmailJS
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
+
 
 interface Product {
   id: number;
@@ -11,6 +14,7 @@ interface Product {
 
 export const OrderSummary = () => {
   const [cartData, setCartData] = useState<Product[]>([]);
+  const navigate = useNavigate();
   const [shippingDetails, setShippingDetails] = useState({
     name: '',
     address: '',
@@ -65,12 +69,30 @@ const handleConfirmOrder = () => {
       .then((response) => {
         console.log('Email sent successfully!', response.status, response.text);
          // Clear local storage after sending email successfully
-         localStorage.removeItem('cartData');
-         localStorage.removeItem('cart');
-         localStorage.removeItem('shippingDetails');
+         Swal.fire({
+          icon:'success',
+          title:'Order Confirmed!',
+          text:'Your order was Placed Successfully, Your Order will be delivered soon ',
+          confirmButtonText:'OK',
+          timer:3000,
+          toast:true,
+          position:'center',
+          showConfirmButton:true,
+          timerProgressBar:true,
+         }).then(()=>{
+          localStorage.removeItem('cartData');
+          localStorage.removeItem('cart');
+          localStorage.removeItem('shippingDetails');
+          navigate('/products')
+         })
       })
       .catch((error) => {
         console.error('Failed to send email. Error:', error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong. Please try again.',
+        });
       });
 };
 
