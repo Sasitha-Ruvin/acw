@@ -9,19 +9,23 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Facial from './Pages/Facial';
 import Cart from './Pages/Cart';
+import { CartProvider } from './context/CartContext';
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/products' element ={<Products/>}/>
-      <Route path='/about' element={<About/>}/>
-      <Route path='/contact' element={<Contact/>}/>
-      <Route path='/facial' element={<Facial/>}/>
-      <Route path='/cart' element={<Cart/>}/>
-      </Routes>
-    </Router>
+    <CartProvider>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/products' element ={<Products/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/contact' element={<Contact/>}/>
+          <Route path='/facial' element={<Facial/>}/>
+          <Route path='/cart' element={<Cart/>}/>
+        </Routes>
+      </Router>
+    </CartProvider>
+    
   
   )
 }

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Product } from '../../Data/products';
+import { useCart } from '../../context/CartContext';
+
 
 interface ProductPopupProps {
   product: Product;
@@ -8,8 +10,10 @@ interface ProductPopupProps {
 }
 
 export default function ProductPopup({ product, onClose }: ProductPopupProps) {
-  const [selectedImage, setSelectedImage] = useState(product.image); // Default to main image
-  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const [selectedImage, setSelectedImage] = useState(product.image);
+  const [isLoading, setIsLoading] = useState(false);
+  const[quantity, setQuantity] = useState(1);
+  const {addToCart } = useCart();
 
   const handleImageClick = (image: string) => {
     setIsLoading(true); // Start loading animation
@@ -18,6 +22,23 @@ export default function ProductPopup({ product, onClose }: ProductPopupProps) {
       setIsLoading(false); // Stop loading animation after a delay
     }, 300); // Simulate a loading delay (800ms)
   };
+
+  const incrementQuantity = () =>{
+    if(quantity <10){
+      setQuantity(quantity+1)
+    }
+  };
+
+  const decrementQuantity = () =>{
+    if(quantity > 1){
+      setQuantity(quantity-1);
+    }
+  }
+
+  const handleAddToCart = () =>{
+    addToCart({...product, quantity});
+    onClose();
+  }
 
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
@@ -80,9 +101,23 @@ export default function ProductPopup({ product, onClose }: ProductPopupProps) {
             <h2 className="text-2xl font-bold mb-2">{product.name}</h2>
             <p className="text-gray-600 mb-4">{product.desc}</p>
           </div>
+
+          {/* Quantity */}
+          <div className='flex items-center space-x-4 mb-4'>
+            <button onClick={decrementQuantity} className='px-4 py-2 bg-gray-200 text-lg rounded-md hover:bg-gray-300 transition'>
+              -
+            </button>
+            <span className='text-xl font-semibold'>{quantity}</span>
+            <button onClick={incrementQuantity} className='px-4 py-2 bg-gray-200 text-lg rounded-md hover:bg-gray-300 transition'>
+              +
+            </button>
+
+          </div>
           <div>
             <p className="text-xl font-semibold mb-4">Rs. {product.price}</p>
-            <button className="w-full py-3 bg-purple-500 text-white font-semibold rounded-md hover:bg-purple-700 transition duration-300">
+            <button className="w-full py-3 bg-purple-500 text-white font-semibold rounded-md hover:bg-purple-700 transition duration-300"
+              onClick={handleAddToCart}
+              >
               Add to Cart
             </button>
           </div>
