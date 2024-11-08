@@ -50,19 +50,11 @@ const ShippingSection: React.FC<{ onBackToCart: () => void; onContinueToOrderSum
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files ? e.target.files[0] : null;
-    setTransferSlip(file); // Store the raw file
-  
+    setTransferSlip(file); // Store the file
+
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const base64String = reader.result?.toString().split(',')[1]; // Get the base64 string part
-        setTransferSlipBase64(base64String || null); // Store the base64 string
-        setTransferSlipError(''); // Clear error on valid upload
-  
-        // Save the transfer slip base64 to localStorage
-        localStorage.setItem('transferSlip', JSON.stringify(base64String));
-      };
-      reader.readAsDataURL(file); // Read the file as data URL
+      // Save the file reference to localStorage (or you can save the file on the server)
+      localStorage.setItem('transferSlipName', file.name); // Only storing the file name in local storage
     }
   };
 
@@ -185,7 +177,7 @@ const ShippingSection: React.FC<{ onBackToCart: () => void; onContinueToOrderSum
                   Cash on Delivery
                 </label>
 
-                <label className="block mb-2">
+                {/* <label className="block mb-2">
                   <input
                     type="radio"
                     name="paymentMethod"
@@ -195,10 +187,10 @@ const ShippingSection: React.FC<{ onBackToCart: () => void; onContinueToOrderSum
                     className="mr-2"
                   />
                   Bank Transfer
-                </label>
+                </label> */}
               </div>
 
-              {paymentMethod === 'Bank Transfer' && (
+              {/* {paymentMethod === 'Bank Transfer' && (
                 <div className="mb-4">
                   <p className="mb-2">
                     <strong>Make Payment to:</strong><br />
@@ -218,7 +210,7 @@ const ShippingSection: React.FC<{ onBackToCart: () => void; onContinueToOrderSum
                     <p className="text-red-500 text-sm mt-1">{transferSlipError}</p>
                   )}
                 </div>
-              )}
+              )} */}
             </div>
 
             <button
